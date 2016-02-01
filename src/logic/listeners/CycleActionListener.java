@@ -1,15 +1,15 @@
-package gui.listeners;
+package logic.listeners;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import gui.Main;
 
-public class CycleListener implements ActionListener {
+public class CycleActionListener implements ActionListener {
 
 	private Main gui;
 	
-	public CycleListener(Main gui){
+	public CycleActionListener(Main gui){
 		this.gui = gui;
 	}
 	
@@ -20,7 +20,7 @@ public class CycleListener implements ActionListener {
 
 		switch (command) {
 			case "cyclesChanged": {
-				this.gui.updateCycles(((CycleChanged)event).getCycles());
+				this.gui.updateCycles(((CycleChangedActionEvent)event).getCycles());
 				break;
 			}
 		}

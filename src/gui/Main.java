@@ -7,10 +7,11 @@ import javax.swing.JMenuItem;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 
+import gui.listeners.ButtonActionListener;
+
 import java.awt.BorderLayout;
 
 import logic.CellEventListener;
-import logic.LogicActionListener;
 
 import javax.swing.JPanel;
 
@@ -18,9 +19,7 @@ import javax.swing.JLabel;
 
 public class Main {
 
-
-
-	private LogicActionListener logicActionListener;
+	private ButtonActionListener logicActionListener;
 	private CellEventListener cellEventListener;
 	
 	// gui components
@@ -29,7 +28,7 @@ public class Main {
 
 	private JLabel lblCycles;
 	
-	public void setListener(LogicActionListener logicActionListener, CellEventListener cellEventListener){
+	public void setListener(ButtonActionListener logicActionListener, CellEventListener cellEventListener){
 		this.logicActionListener = logicActionListener;
 		this.cellEventListener = cellEventListener;
 	}

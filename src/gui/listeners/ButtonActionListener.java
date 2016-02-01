@@ -1,15 +1,15 @@
-package logic;
+package gui.listeners;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.cycle.Cycle;
 
-public class LogicActionListener implements ActionListener {
+public class ButtonActionListener implements ActionListener {
 
 	private Cycle cycle;
 	
-	public LogicActionListener(Cycle cycle) {
+	public ButtonActionListener(Cycle cycle) {
 		this.cycle = cycle;
 	}
 	

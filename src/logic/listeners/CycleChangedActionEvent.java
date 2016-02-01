@@ -1,8 +1,8 @@
-package gui.listeners;
+package logic.listeners;
 
 import java.awt.event.ActionEvent;
 
-public class CycleChanged extends ActionEvent {
+public class CycleChangedActionEvent extends ActionEvent {
 
 	/**
 	 * 
@@ -11,7 +11,7 @@ public class CycleChanged extends ActionEvent {
 	
 	private int cyclesNumber;
 	
-	public CycleChanged(Object source, int id, String command, int cyclesNumber) {
+	public CycleChangedActionEvent(Object source, int id, String command, int cyclesNumber) {
 		super(source, id, command);
 		
 		this.cyclesNumber = cyclesNumber;

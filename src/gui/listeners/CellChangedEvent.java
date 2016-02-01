@@ -2,7 +2,7 @@ package gui.listeners;
 
 import java.awt.event.ActionEvent;
 
-public class CellChanged extends ActionEvent {
+public class CellChangedEvent extends ActionEvent {
 
 	/**
 	 * 
@@ -13,7 +13,7 @@ public class CellChanged extends ActionEvent {
 	private int col;
 	private String symbol;
 	
-	public CellChanged(Object source, int id, String command, int row, int col, String symbol) {
+	public CellChangedEvent(Object source, int id, String command, int row, int col, String symbol) {
 		super(source, id, command);
 		
 		this.row = row;

@@ -5,11 +5,11 @@ import java.awt.event.ActionListener;
 
 import gui.Main;
 
-public class CellListener implements ActionListener {
+public class CellActionListener implements ActionListener {
 
 	private Main gui;
 	
-	public CellListener(Main gui){
+	public CellActionListener(Main gui){
 		this.gui = gui;
 	}
 	
@@ -20,7 +20,7 @@ public class CellListener implements ActionListener {
 		
 		switch (command) {
 			case "cellChanged" : {
-				this.gui.updatesCell(((CellChanged)event).getRow(), ((CellChanged)event).getCol(), ((CellChanged)event).getSymbol());
+				this.gui.updatesCell(((CellChangedEvent)event).getRow(), ((CellChangedEvent)event).getCol(), ((CellChangedEvent)event).getSymbol());
 			}
 		}
 	}

@@ -1,11 +1,11 @@
 package logic.elements;
 
-import gui.listeners.CellChanged;
-import gui.listeners.CellListener;
+import gui.listeners.CellChangedEvent;
+import gui.listeners.CellActionListener;
 
 public class Garden {
 
-	private CellListener guiListener;
+	private CellActionListener guiListener;
 	private int[][] grid;
 	
 	private final int rows = 20;
@@ -16,7 +16,7 @@ public class Garden {
 		initGarden();
 	}
 	
-	public void setListener(CellListener guiListener) {
+	public void setListener(CellActionListener guiListener) {
 		this.guiListener = guiListener;	
 	}
 
@@ -32,7 +32,7 @@ public class Garden {
 			grid[selectedRow][selectedColumn] = 0;
 		
 		if (guiListener != null)
-			guiListener.actionPerformed(new CellChanged(this, 0, "cellChanged", selectedRow, selectedColumn, s));
+			guiListener.actionPerformed(new CellChangedEvent(this, 0, "cellChanged", selectedRow, selectedColumn, s));
 		
 	}
 	

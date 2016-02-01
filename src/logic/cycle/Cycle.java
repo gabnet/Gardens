@@ -1,20 +1,20 @@
 package logic.cycle;
 
-import gui.listeners.CycleChanged;
-import gui.listeners.CycleListener;
+import logic.listeners.CycleActionListener;
+import logic.listeners.CycleChangedActionEvent;
 
 public class Cycle extends Thread {
 
 	private Control control;
 	private int numberOfCycles;
-	private CycleListener guiListener;
+	private CycleActionListener guiListener;
 	
 	public Cycle(Control control) {
 		this.control = control;
 		numberOfCycles = 0;
 	}
 	
-	public void setListener(CycleListener guiListener) {
+	public void setListener(CycleActionListener guiListener) {
 		this.guiListener = guiListener;	
 	}
 	
@@ -45,6 +45,6 @@ public class Cycle extends Thread {
 	private void setCycles(int c){
 		numberOfCycles = c;
 		if (guiListener != null)
-			guiListener.actionPerformed(new CycleChanged(this, 0, "cyclesChanged", numberOfCycles));
+			guiListener.actionPerformed(new CycleChangedActionEvent(this, 0, "cyclesChanged", numberOfCycles));
 	}
 }
