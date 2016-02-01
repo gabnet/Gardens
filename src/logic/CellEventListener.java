@@ -16,8 +16,8 @@ public class CellEventListener implements ListSelectionListener {
 		this.table = table;
 	}
 	
-	public void valueChanged(ListSelectionEvent e) {
-	  
-		garden.pressCell(table.getSelectedRow(), table.getSelectedColumn());
+	public void valueChanged(ListSelectionEvent event) {
+		if (!event.getValueIsAdjusting())
+			garden.pressCell(table.getSelectedRow(), table.getSelectedColumn());
 	}
 }

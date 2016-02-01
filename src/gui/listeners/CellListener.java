@@ -17,10 +17,10 @@ public class CellListener implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 
 		String command = event.getActionCommand();
-
+		
 		switch (command) {
 			case "cellChanged" : {
-				this.gui.updatesCells(((CellChanged)event).getRow(), ((CellChanged)event).getCol());
+				this.gui.updatesCell(((CellChanged)event).getRow(), ((CellChanged)event).getCol(), ((CellChanged)event).getSymbol());
 			}
 		}
 	}

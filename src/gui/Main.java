@@ -9,17 +9,10 @@ import javax.swing.ListSelectionModel;
 
 import java.awt.BorderLayout;
 
-import javax.swing.table.DefaultTableModel;
-
 import logic.CellEventListener;
 import logic.LogicActionListener;
 
 import javax.swing.JPanel;
-import javax.swing.border.LineBorder;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-
-import java.awt.Color;
 
 import javax.swing.JLabel;
 
@@ -55,8 +48,8 @@ public class Main {
 		lblCycles.setText(Integer.toString(cyclesNumber));
 	}
 	
-	public void updatesCells(int row, int col) {
-		table.setValueAt("@", row, col);
+	public void updatesCell(int row, int col, String symbol) {
+		table.setValueAt(symbol, row, col);
 	}
 	
 	public JTable getTable(){

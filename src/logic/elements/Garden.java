@@ -21,14 +21,19 @@ public class Garden {
 	}
 
 	public void pressCell(int selectedRow, int selectedColumn) {
+
+		String s = new String();
 		
-		if (grid[selectedRow][selectedColumn] == 0)
+		if (grid[selectedRow][selectedColumn] == 0) {
+			s = "@";
 			grid[selectedRow][selectedColumn] = 1;
+		}
 		else
 			grid[selectedRow][selectedColumn] = 0;
 		
 		if (guiListener != null)
-			guiListener.actionPerformed(new CellChanged(this, 0, "cellChanged", selectedRow, selectedColumn));
+			guiListener.actionPerformed(new CellChanged(this, 0, "cellChanged", selectedRow, selectedColumn, s));
+		
 	}
 	
 	private void initGarden(){
