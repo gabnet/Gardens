@@ -11,7 +11,8 @@ import logic.elements.Garden;
 
 public class DaisyGarden {
 
-	private static gui.listeners.CycleListener guiListener;
+	private static gui.listeners.CycleListener guiCycleActionListener;
+	private static gui.listeners.CellListener guiCellActionListener;
 	private static logic.LogicActionListener logicActionListener;
 	private static logic.CellEventListener cellEventListener;
 	private static JTable mainTable;
@@ -31,11 +32,13 @@ public class DaisyGarden {
 					mainTable = GuiFactory.getTable();
 					
 					cellEventListener = new logic.CellEventListener(garden, mainTable);
-					guiListener = new gui.listeners.CycleListener(window);
+					guiCycleActionListener = new gui.listeners.CycleListener(window);
 					logicActionListener = new logic.LogicActionListener(logic);
+					guiCellActionListener = new gui.listeners.CellListener(window);
 					
-					logic.setListener(guiListener);
+					logic.setListener(guiCycleActionListener);
 					window.setListener(logicActionListener, cellEventListener);
+					garden.setListener(guiCellActionListener);
 					
 					window.Start(mainTable);
 				} catch (Exception e) {

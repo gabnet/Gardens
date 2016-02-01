@@ -18,11 +18,6 @@ public class CellEventListener implements ListSelectionListener {
 	
 	public void valueChanged(ListSelectionEvent e) {
 	  
-		int selectedRow = table.getSelectedRow();
-		int selectedColumn = table.getSelectedColumn();
-
-		System.out.println("Hit!" + selectedRow + " " + selectedColumn);
-		
-		garden.pressCell(selectedRow, selectedColumn);
+		garden.pressCell(table.getSelectedRow(), table.getSelectedColumn());
 	}
 }

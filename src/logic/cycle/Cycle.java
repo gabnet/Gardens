@@ -2,13 +2,12 @@ package logic.cycle;
 
 import gui.listeners.CycleChanged;
 import gui.listeners.CycleListener;
-import logic.ListenerContainer;
 
 public class Cycle extends Thread {
 
 	private Control control;
 	private int numberOfCycles;
-	private ListenerContainer guiListener;
+	private CycleListener guiListener;
 	
 	public Cycle(Control control) {
 		this.control = control;
@@ -16,7 +15,7 @@ public class Cycle extends Thread {
 	}
 	
 	public void setListener(CycleListener guiListener) {
-		this.guiListener = new ListenerContainer(guiListener);	
+		this.guiListener = guiListener;	
 	}
 	
 	@Override
@@ -45,6 +44,7 @@ public class Cycle extends Thread {
 	
 	private void setCycles(int c){
 		numberOfCycles = c;
-		guiListener.actionPerformed(new CycleChanged(this, 0, "cyclesChanged", numberOfCycles));
+		if (guiListener != null)
+			guiListener.actionPerformed(new CycleChanged(this, 0, "cyclesChanged", numberOfCycles));
 	}
 }

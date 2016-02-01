@@ -5,11 +5,11 @@ import java.awt.event.ActionListener;
 
 import gui.Main;
 
-public class CycleListener implements ActionListener {
+public class CellListener implements ActionListener {
 
 	private Main gui;
 	
-	public CycleListener(Main gui){
+	public CellListener(Main gui){
 		this.gui = gui;
 	}
 	
@@ -19,10 +19,10 @@ public class CycleListener implements ActionListener {
 		String command = event.getActionCommand();
 
 		switch (command) {
-			case "cyclesChanged": {
-				this.gui.updateCycles(((CycleChanged)event).getCycles());
-				break;
+			case "cellChanged" : {
+				this.gui.updatesCells(((CellChanged)event).getRow(), ((CellChanged)event).getCol());
 			}
 		}
 	}
+
 }

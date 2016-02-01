@@ -56,7 +56,7 @@ public class Main {
 	}
 	
 	public void updatesCells(int row, int col) {
-		table.getCellEditor(row,col).getTableCellEditorComponent(table, table.getValueAt(row,col), true, row, col).setForeground(Color.red);
+		table.setValueAt("@", row, col);
 	}
 	
 	public JTable getTable(){
