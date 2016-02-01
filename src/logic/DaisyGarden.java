@@ -11,9 +11,9 @@ import logic.elements.Garden;
 
 public class DaisyGarden {
 
-	private static logic.listeners.CycleActionListener guiCycleActionListener;
-	private static gui.listeners.CellActionListener guiCellActionListener;
-	private static gui.listeners.ButtonActionListener logicActionListener;
+	private static logic.listeners.CycleActionListener cycleActionListener;
+	private static gui.listeners.CellActionListener cellActionListener;
+	private static gui.listeners.ButtonActionListener buttonActionListener;
 	private static logic.CellEventListener cellEventListener;
 	private static JTable mainTable;
 	
@@ -32,13 +32,13 @@ public class DaisyGarden {
 					mainTable = GuiFactory.getTable();
 					
 					cellEventListener = new logic.CellEventListener(garden, mainTable);
-					guiCycleActionListener = new logic.listeners.CycleActionListener(window);
-					logicActionListener = new gui.listeners.ButtonActionListener(logic);
-					guiCellActionListener = new gui.listeners.CellActionListener(window);
+					cycleActionListener = new logic.listeners.CycleActionListener(window);
+					buttonActionListener = new gui.listeners.ButtonActionListener(logic);
+					cellActionListener = new gui.listeners.CellActionListener(window);
 					
-					logic.setListener(guiCycleActionListener);
-					window.setListener(logicActionListener, cellEventListener);
-					garden.setListener(guiCellActionListener);
+					logic.setListener(cycleActionListener);
+					window.setListener(buttonActionListener, cellEventListener);
+					garden.setListener(cellActionListener);
 					
 					window.Start(mainTable);
 				} catch (Exception e) {
